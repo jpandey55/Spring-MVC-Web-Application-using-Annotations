@@ -5,20 +5,17 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-       
-   <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-   <property name="staticMethod" >
-   <value>com.jeet.www.Factory.CarFactory.setCarName</value>
-   </property>
-    <property name="arguments">
-    <value>com.jeet.www.Factory.Dodge</value>
-	</property>
-    </bean>
-    <!--  <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-   <property name="staticMethod" >
-   <value>com.jeet.www.Factory.Beamer.print</value>
-   </property>
-    </bean> -->
-    <bean id="c" class="com.jeet.www.Factory.CarFactory" factory-method="getInstance"></bean>
+
+   <bean id="b" class="com.me.business.Bank"></bean>
+   
+   <bean id="lbs" class="com.me.services.LogBeforeService"/>
     
+    <bean id = "pfb" class="org.springframework.aop.framework.ProxyFactoryBean">
+    	<property name="target" ref="b"/>
+    	<property name="interceptorNames" >
+    		<list>
+    			<value>lbs</value>
+    		</list>
+    	</property>
+    </bean>
     </beans>
