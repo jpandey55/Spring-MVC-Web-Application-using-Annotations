@@ -10,12 +10,21 @@
    
    <bean id="lbs" class="com.me.services.LogBeforeService"/>
     
+    <bean id="depositePointcut" class="com.me.services.DepositePointcut"/>
+    
+    <bean id="dpa" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+    	<property name="pointcut" ref="depositePointcut"/>
+    	<property name="advice" ref="lbs"/>
+    </bean>
+    
     <bean id = "pfb" class="org.springframework.aop.framework.ProxyFactoryBean">
     	<property name="target" ref="b"/>
     	<property name="interceptorNames" >
     		<list>
-    			<value>lbs</value>
+    			<value>dpa</value>
     		</list>
     	</property>
     </bean>
+    
+    
     </beans>

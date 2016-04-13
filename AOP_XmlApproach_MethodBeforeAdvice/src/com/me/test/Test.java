@@ -15,6 +15,8 @@ public class Test {
 		
 		ap = new ClassPathXmlApplicationContext("resources/spring.xml");
 		bProxy = (Bank)ap.getBean("pfb");
+		TotalAmount = (int)bProxy.checkBalance();
+		
 		
 	}
 
