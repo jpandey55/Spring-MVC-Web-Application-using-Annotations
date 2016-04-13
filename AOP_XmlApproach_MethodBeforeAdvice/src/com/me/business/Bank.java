@@ -17,4 +17,8 @@ public class Bank {
 			throw new AccountNumberNotFoundException();
 		}
 	}
+	
+	public float checkBalance(){
+		return this.amount;
+	}
 }

@@ -12,6 +12,10 @@ public class Test {
 		int TotalAmount = bProxy.deposite("BOA123", 5000);
 		System.out.println(TotalAmount);
 		ap.close();
+		
+		ap = new ClassPathXmlApplicationContext("resources/spring.xml");
+		bProxy = (Bank)ap.getBean("pfb");
+		
 	}
 
 }
