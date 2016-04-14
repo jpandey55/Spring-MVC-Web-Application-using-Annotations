@@ -9,10 +9,10 @@
 	
 	<form action="/MVC2/submitAdmissionForm.html" method="post">
 	<table>
-		<tr><td>Student's Name: </td><td><input type="text" name="studentName" /> </td></tr>
+		<tr><td>Student's Name: </td><td><input type="text" name="studentName" /> </td><td>Provide Mr/Ms before name(default is Ms.)</td></tr>
 		<tr><td>Student's Hobby: </td><td><input type="text" name="studentHobby" /></td></tr>
 		<tr><td>Student's Mobile: </td><td><input type="text" name="studentMobile" /></td></tr>
-		<tr><td>Student's DOB: </td><td><input type="text" name="studentDOB" /></td></tr>
+		<tr><td>Student's DOB: </td><td><input type="text" name="studentDOB" /></td><td>MM-DD-YYYY</td></tr>
 		<tr><td>Student's Skills set: </td><td> <select name="studentSkills" multiple>
 													<option value="Java Core">Java Core </option>
 													<option value="Spring Core">Spring Core </option>
@@ -26,7 +26,7 @@
 			<td>Country: <input type="text" name="studentAddress.country"/></td>
 			<td>City: <input type="text" name="studentAddress.city"/></td>
 			<td>Street: <input type="text" name="studentAddress.street"/></td>
-			<td>Pincode: <input type="text" name="studentAddress.pincode"/></td>
+			<td>Pin code: <input type="text" name="studentAddress.pincode"/></td>
 		</tr>
 		
 		<tr><td><input type="submit" value="Submit this form"/></td></tr>

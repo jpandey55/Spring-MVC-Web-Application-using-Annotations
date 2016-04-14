@@ -26,10 +26,10 @@
 		</tr>
 		<tr>
 			<td>Student Address</td>
-			<td>Country: ${student1.studentAddress.country }
-				City: ${student1.studentAddress.city }
-				Street: ${student1.studentAddress.street }
-				Pincode: ${student1.studentAddress.pincode }</td>	
+			<td>Country: ${student1.studentAddress.country }</td>
+			<tr><td/><td>City: ${student1.studentAddress.city }</td></tr>
+			<tr><td/><td>Street: ${student1.studentAddress.street }</td></tr>
+			<tr><td/><td>Pin code: ${student1.studentAddress.pincode }</td></tr>	
 		</tr>
 	</table>
 

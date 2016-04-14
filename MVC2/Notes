@@ -1,0 +1,67 @@
+SPRING WEB MVC INITBINDER
+
+Spring automatically binds simple data (Strings, int, float, etc.) into properties of your command bean.  However, what happens 
+when the data is more complex?  For example, what happens when you want to capture a String in “Jan 20, 1990” format and 
+have Spring create a Date object from it as part of the binding operation.  Perhaps you have custom types you want created from 
+their string representation.  For example, you want Spring to take a String in ###-###-#### format and populate a PhoneNumber 
+type property you have in your Command bean.
+
+For this work, you need to inform Spring Web MVC to use PropertyEditor instances as part of the binding process.  The JavaBean 
+API defines a java.beans.PropertyEditor interface. This interface defines methods to convert a property’s value to a String (getAsText()), 
+and to set a property given a String (setAsText(String)). In particular, Spring Web MVC converts incoming request String data to the 
+appropriate data type using PropertyEditors for the fields of the command beans.
+
+read more at:
+http://www.intertech.com/Blog/spring-frameworks-webdatabinder/
+
+Built in property editors
+Table 8.2. Built-in PropertyEditors
+
+Class-Explanation
+ByteArrayPropertyEditor-
+Editor for byte arrays. Strings will simply be converted to their corresponding byte representations. Registered by default by BeanWrapperImpl.
+
+ClassEditor
+Parses Strings representing classes to actual classes and the other way around. When a class is not found, an IllegalArgumentException
+ is thrown. Registered by default by BeanWrapperImpl.
+
+CustomBooleanEditor
+Customizable property editor for Boolean properties. Registered by default by BeanWrapperImpl, but, can be overridden by registering 
+custom instance of it as custom editor.
+
+CustomCollectionEditor
+Property editor for Collections, converting any source Collection to a given target Collection type.
+
+CustomDateEditor
+Customizable property editor for java.util.Date, supporting a custom DateFormat. NOT registered by default. Must be user registered as 
+needed with appropriate format.
+
+CustomNumberEditor
+Customizable property editor for any Number subclass like Integer, Long, Float, Double. Registered by default by BeanWrapperImpl, but 
+can be overridden by registering custom instance of it as a custom editor.
+
+FileEditor
+Capable of resolving Strings to java.io.File objects. Registered by default by BeanWrapperImpl.
+
+InputStreamEditor
+One-way property editor, capable of taking a text string and producing (via an intermediate ResourceEditor and Resource) an InputStream,
+so InputStream properties may be directly set as Strings. Note that the default usage will not close the InputStream for you! Registered by 
+default by BeanWrapperImpl.
+
+LocaleEditor
+Capable of resolving Strings to Locale objects and vice versa (the String format is [country][variant], which is the same thing the toString() 
+method of Locale provides). Registered by default by BeanWrapperImpl.
+
+PatternEditor
+Capable of resolving Strings to java.util.regex.Pattern objects and vice versa.
+
+PropertiesEditor
+Capable of converting Strings (formatted using the format as defined in the javadocs of the java.util.Properties class) to Properties objects. 
+Registered by default by BeanWrapperImpl.
+
+StringTrimmerEditor
+Property editor that trims Strings. Optionally allows transforming an empty string into a null value. NOT registered by default; must be user 
+registered as needed.
+
+URLEditor
+Capable of resolving a String representation of a URL to an actual URL object. Registered by default by BeanWrapperImpl.
