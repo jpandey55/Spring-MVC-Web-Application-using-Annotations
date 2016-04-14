@@ -1,7 +1,7 @@
 <html>
 <body>
 	<h1>${headerMessage}</h1>
-	<h1>Congratulations!! the Engineering College has processed your application form succesfully</h1>
+	<h1>Congratulations!! the Engineering College has processed your application form successfully</h1>
 	<h2>Details submitted by you</h2>
 	<table>
 		<tr>

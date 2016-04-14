@@ -1,11 +1,13 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
-<head>
-<h1>${headerMessage}</h1>
-<title>STUDENT ADMISSION FORM FOR ENGINEERING COURSES</title>
-</head>
 <body>
-	<form action="./submitAdmissionForm.html" method="post">
+	<h1>${headerMessage}</h1>
+	<h3>STUDENT ADMISSION FORM FOR ENGINEERING COURSES</h3>
+	
+	<form:errors  path="student1.*"/>
+	
+	<form action="/MVC2/submitAdmissionForm.html" method="post">
 	<table>
 		<tr><td>Student's Name: </td><td><input type="text" name="studentName" /> </td></tr>
 		<tr><td>Student's Hobby: </td><td><input type="text" name="studentHobby" /></td></tr>
