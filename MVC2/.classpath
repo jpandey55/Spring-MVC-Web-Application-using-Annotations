@@ -14,5 +14,10 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/jitendra/Downloads/hibernate-validator-5.2.4.Final/dist/lib/required/classmate-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/jitendra/Downloads/hibernate-validator-5.2.4.Final/dist/lib/required/javax.el-2.2.4.jar"/>
+	<classpathentry kind="lib" path="/home/jitendra/Downloads/hibernate-validator-5.2.4.Final/dist/lib/required/javax.el-api-2.2.4.jar"/>
+	<classpathentry kind="lib" path="/home/jitendra/Downloads/hibernate-validator-5.2.4.Final/dist/lib/required/jboss-logging-3.2.1.Final.jar"/>
+	<classpathentry kind="lib" path="/home/jitendra/Downloads/hibernate-validator-5.2.4.Final/dist/lib/required/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

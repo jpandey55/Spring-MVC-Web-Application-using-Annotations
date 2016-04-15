@@ -14,7 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Student {
 	@NotEmpty @Pattern(regexp="[^0-9]*")
 	private String studentName;
-	@NotEmpty @Size(min=2, max=30)
+	@NotEmpty @Size(min=2, max=30) @IsHobby(listOfValidHobbies="Music|Football|Cricket|Hockey|Guitar")
 	private String studentHobby;
 	@Min(1000000000)
 	private Long studentMobile;
