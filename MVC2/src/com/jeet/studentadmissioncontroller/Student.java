@@ -3,14 +3,24 @@ package com.jeet.studentadmissioncontroller;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Student {
+	@NotEmpty @Pattern(regexp="[^0-9]*")
 	private String studentName;
-	@Size(min=2, max=30)
+	@NotEmpty @Size(min=2, max=30)
 	private String studentHobby;
+	@Min(1000000000)
 	private Long studentMobile;
+	@Past 
 	private Date studentDOB;
+	@NotEmpty
 	private List<String> studentSkills;
 	private Address studentAddress;
 	public String getStudentName() {

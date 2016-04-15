@@ -24,5 +24,7 @@
 	<bean id="messageSource"
 	class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 	<property name="basename" value="/WEB-INF/StudentErrorMessages"></property>
+	<property name="cacheSeconds" value="1" /> <!-- Instructing Spring MVC to save the properties file automatically
+	after every 1 sec during runtime -->
 	</bean>
     </beans>
