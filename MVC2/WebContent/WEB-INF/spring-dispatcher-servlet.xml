@@ -11,11 +11,27 @@
     
     <context:component-scan base-package="com.jeet.studentadmissioncontroller"></context:component-scan>
 	<mvc:annotation-driven/>
+	
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/" />
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/admissionForm.html"/>
 			<bean class="com.jeet.studentadmissioncontroller.DayOfWeekBasedInterceptor"></bean>
 		</mvc:interceptor>
+		
+		
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="siteLanguage"></property>
+		</bean>
+		
+		
+	
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+			<property name="paramName" value="siteTheme"/>
+		</bean>
+		
+	
 	</mvc:interceptors>
 	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
@@ -33,4 +49,39 @@
 	<property name="cacheSeconds" value="1" /> <!-- Instructing Spring MVC to save the properties file automatically
 	after every 1 sec during runtime -->
 	</bean>
-    </beans>
+	
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"></bean>
+  
+    
+    <bean id="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+    	<property name="basenamePrefix" value="theme-"/>
+    </bean>
+    
+    <!-- To make theme interceptor work -->
+    <bean id="themeResolver"
+    	class="org.springframework.web.servlet.theme.CookieThemeResolver">
+    	<property name="defaultThemeName" value="green"/>
+    </bean>
+    
+    <!-- 
+    <bean id="simpleMappingExceptionResolver"
+    class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    	<property name="exceptionMappings">
+    		<map>
+    			<entry key="IOException" value="IOException"/>
+    		</map>
+    	</property>
+    
+    This is the default error webpage or the generic error webpage 
+    
+    <property name="defaultErrorView" value="Exception"/>
+    
+     Name of logger to use to log exceptions. Unset by default, so logging disabled 
+    
+    <property name="warnLogCategory" value="MVCLogger"></property>
+    </bean>
+     -->
+    
+    
+      </beans>

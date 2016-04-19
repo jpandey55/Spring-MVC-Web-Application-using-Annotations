@@ -1,5 +1,6 @@
 package com.jeet.studentadmissioncontroller;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,10 +32,13 @@ public class StudentAdmissionController {
 	
 	@RequestMapping(value="/admissionForm.html", method=RequestMethod.GET)
 	public ModelAndView getAdmissionForm(){
+
 		ModelAndView mav = new ModelAndView("AdmissionForm");
 		return mav;
+		
 	}
 	
+
 	//Spring MVC will make a call to this method first before any other method
 	@ModelAttribute
 	public void addingCommonObjects(Model model1){
@@ -51,4 +56,6 @@ public class StudentAdmissionController {
 		ModelAndView mav =new  ModelAndView("AdmissionSuccess");
 		return mav;
 	}
+	
+
 }

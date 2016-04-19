@@ -65,3 +65,12 @@ registered as needed.
 
 URLEditor
 Capable of resolving a String representation of a URL to an actual URL object. Registered by default by BeanWrapperImpl.
+
+------------------------------
+<context:annotation-config> 
+declares support for general annotations such as @Required, @Autowired, @PostConstruct, and so on.
+
+<mvc:annotation-driven /> 
+declares explicit support for annotation-driven MVC controllers (i.e. @RequestMapping, @Controller, although support for those is the 
+default behaviour), as well as adding support for declrative validation via @Valid and message body marshalling with 
+@RequestBody/ResponseBody
